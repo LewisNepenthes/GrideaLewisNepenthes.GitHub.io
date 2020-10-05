@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Latex常见公式环境与对齐方式小节（重修版） | LewisNepenthes&#39;s Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://LewisNepenthes.github.io/favicon.ico?v=1601900620497">
+<link rel="stylesheet" href="https://LewisNepenthes.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="本文将讨论全局与局部的公式对齐方式的调节，并对比各种常见的公式环境的差异（尤其是在对齐方面），介绍多行公式、多公式的编写方式。
+针对各种常见环境（尤其是多行公式环境）的差异，对它们分别适用于哪种应用环境提出建议。
+本文是在前文的基础上，采用..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://LewisNepenthes.github.io">
+        <img src="https://LewisNepenthes.github.io/images/avatar.png?v=1601900620497" class="site-logo">
+        <h1 class="site-title">LewisNepenthes&#39;s Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            Archived
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            Tags
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About
+          </a>
+        
+      
+        
+          <a href="https://LewisNepenthes.github.io/post/hello-gridea" class="site-nav">
+            Inbox
+          </a>
+        
+      
+        
+          <a href="https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling" class="site-nav" target="_blank">
+            External
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/LewisNepenthes" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/u/6369445121/home" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/lewisnepenthes" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      LewisNepenthes's Output
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://LewisNepenthes.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Latex常见公式环境与对齐方式小节（重修版）</h2>
+            <div class="post-date">2020-10-05-Mon 20:22:59</div>
+            
+            <div class="post-content" v-pre>
+              <p>本文将讨论全局与局部的公式对齐方式的调节，并对比各种常见的公式环境的差异（尤其是在对齐方面），介绍多行公式、多公式的编写方式。<br>
+针对各种常见环境（尤其是多行公式环境）的差异，对它们分别适用于哪种应用环境提出建议。</p>
+<p>本文是在<a href="http://blog.csdn.net/yanxiangtianji/article/details/17583723">前文</a>的基础上，采用Markdown重置的，调整了部分语言和格式，内容没有核心差异。</p>
+<h2 id="全局对齐">全局对齐</h2>
+<p>默认的公式对齐方式是居中对齐。<br>
+如果全文要大量使用左对齐方式，可以采用在documentclass或者amsmath包前面加上参数<code>fleqn</code>，这样全局的默认对齐方式就是左对齐了。<br>
+<code>\documentclass[fleqn]{article}</code><br>
+或<br>
+<code>\usepackage[fleqn]{amsmath}</code></p>
+<h2 id="公式跨页">公式跨页</h2>
+<p>默认一个公式环境里面的多行公式是不会跨页显示的，可以使用下面命令开启全局的自动跨页显示：<br>
+<code>\allowdisplaybreaks</code><br>
+或<br>
+<code>\allowdisplaybreaks[n]</code><br>
+n的值为0到4,表示分页的坚决程度，例如0表示能不分页就不分页，4表示强制分页。<br>
+也可以在公式环境中使用<code>\displaybreak</code>手工指定分页，它同样可以带有这个参数。</p>
+<p>关于公示环境有一下几点需要注意：</p>
+<ol>
+<li>在这些环境里面默认的输入文本都是公式：
+<ol>
+<li>即不需要再输入<code>$ ... $</code>或<code>\[ ... \]</code>；</li>
+<li><strong>空格</strong>是被自动过滤的，如果需要调整间隔，需要插入文本或使用诸如<code>\; \: \, \quad</code>的公示环境间隔符。</li>
+</ol>
+</li>
+<li>如果要输入一般文本建议用<code>\text{...}</code>，它由包amstext提供。
+<ol>
+<li>它相对于latex内置的<code>\mbox{...}</code>的优势在于<code>\text{}</code>可以根据当前位置<strong>自动调整文本样式</strong>（尤其是大小），而<code>\mbox{}</code>采用统一的<strong>正文样式</strong>。这一点在你的文本被用作上下标的时候非常重要。</li>
+</ol>
+</li>
+<li>对于非简写的环境（begin和end包裹的）都有两种形式，一种直接写环境名，会<strong>参与自动编号</strong>；另一种是在环境名后面加一个星号“<code>*</code>”，不会参与编号。如果没有故意修改，编号都是在最右边，在公式排版时，可以认为页面的右边缘被向左移动了一个编号所占用的距离。<br>
+下面的讨论为了描述简便都是在带有星号，并且页面是单栏的情况下进行的。</li>
+</ol>
+<p>下面讨论各种常见公式环境，并重点讨论它们在对齐方面的差异。</p>
+<h2 id="简写形式一个公式">简写形式（一个公式）</h2>
+<pre><code>$ equation $
+$$ equation $$
+\[ equation \]
+</code></pre>
+<p>它们的特点是都不产生编号公式。<br>
+后两种公式单独占一行，即不能嵌入正文中。<br>
+用<code>$$ ... $$</code>表示的公式自动居中，而<code>\[ ... \]</code>表示的公式会根据配置的全局对齐方式对齐。</p>
+<h2 id="标准单个公式环境">标准单个公式环境</h2>
+<pre><code>\begin{equation}
+...
+\end{equation}
+</code></pre>
+<p>它是最一般的公式环境，表示一个公式，默认情况下之表示一个单行的公式，但是它的功能可以通过内嵌各种其他环境进行扩展。<br>
+它可以内嵌的一些关于对齐的环境，这些环境将在后面介绍。</p>
+<h2 id="align多个公式">align（多个公式）</h2>
+<p>这是最基本的对齐环境，其他多公式环境都不同程度地依赖它。<br>
+与表格环境一样，它采用”<code>&amp;</code>“分割各个对齐单元，使用”<code>\\</code>“换行。<br>
+它的每行是一个公式，都会独立编号。<br>
+在排版过程中，它将<code>&amp;</code>分出来的列又分成组，组间特定方式排版，具体方式在flalign环境中讨论。</p>
+<pre><code>\begin{align*}
+ f(x) &amp; = (x+a)(x+b) \\
+      &amp; = x^2 + (a+b)x + ab
+\end{align*}
+</code></pre>
+<p>它看起来是这样的：</p>
+<script type="math/tex; mode=display" id="MathJax-Element-1">
+
+
+f(x)\=(x+a)(x+b)\=x2+(a+b)x+ab
+
+</script>
+<h2 id="其他多公式环境">其他多公式环境</h2>
+<p>这些环境的各自对齐方式会覆盖全局的对齐方式，例如即使全局配置的是居中对齐，而flalign也会使它的首列左对齐。</p>
+<p>Environment name</p>
+<p>Description</p>
+<p>Notes</p>
+<p><code>eqnarray</code> <code>eqnarray*</code></p>
+<p>Similar to <code>align</code> and <code>align*</code></p>
+<p>Not recommended since spacing is inconsistent</p>
+<p><code>multline</code> <code>multline*</code></p>
+<p>First line left aligned, last line right aligned</p>
+<p>Equation number aligned vertically with first line and not centered as with other environments.</p>
+<p><code>gather</code> <code>gather*</code></p>
+<p>Consecutive equations without alignment</p>
+<p><code>flalign</code> <code>flalign*</code></p>
+<p>Similar to <code>align</code>, but left aligns first equation column, and right aligns last column</p>
+<p><code>alignat</code> <code>alignat*</code></p>
+<p>Takes an argument specifying number of columns.</p>
+<p>Allows to control explicitly the horizontal space between equations You can calculate the number of columns by counting <code>&amp;</code> characters in a line and adding 1</p>
+<p>表格参考自：<a href="http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics">http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics</a><br>
+其中除了eqnarray是内置的以外，其他的都需要amsmath包支持。</p>
+<p>需要注意的是表格中说的对齐方式是从大方面说的，例如flalign的首列左对齐是相对与整个页面而言的，而各行不同长度的第一列却采用右对齐的方式，即其中最长的一个的左端顶着页边，其他的列的右端与它的右端对齐。尾列的右对齐与之类似。后面详细说明。</p>
+<h3 id="1-eqnarray">1. eqnarray</h3>
+<p>与align相同，只是在名字上更直接地表示它包含了多个公式。</p>
+<h3 id="2-gather">2. gather</h3>
+<p>它是最简单的多行公式环境，自己<strong>不提供</strong>任何对齐。其中的各行公式按照全局方式分别对齐。<br>
+在设置了全局左对齐之后，因为不存在内部各个公式之间对排版的干扰，这种环境非常适合写数学推导或者证明。</p>
+<pre><code>\begin{gather*}
+E(X)=\lambda	\qquad	D(X)=\lambda	\\
+E(\bar{X})=\lambda	\\
+D(\bar{X})=\frac{\lambda}{n}	\\
+E(S^2)=\frac{n-1}{n}\lambda	\\
+\end{gather*}
+</code></pre>
+<script type="math/tex; mode=display" id="MathJax-Element-78">
+
+
+E(X)\=λD(X)\=λE(X¯)\=λD(X¯)\=λnE(S2)\=n−1nλ
+
+</script>
+<h3 id="3-flalign">3. flalign</h3>
+<p>虽然可以使用多个<code>&amp;</code>，但是比较一般的用法是在只在等号前面使用一个<code>&amp;</code>，它使所有列表现地像是根据等号对齐了，因此这个环境很适合用来编写多行的公式推导和数值计算过程。例如：</p>
+<pre><code>\begin{align}
+E(S^2)	&amp;=E\left(\frac{1}{n} \sum_{i=1}^n (X_i-\bar{X})^2\right)	\\
+&amp;	=E\left(\frac{1}{n}\sum_{i=1}^n X_i^2\right) - E\left(\frac{1}{n}\sum_{i=1}^n 2\bar{X}X_i\right) + E\left(\frac{1}{n}\sum_{i=1}^n \bar{X}^2\right)	\\
+&amp;	=EX^2 -E(\bar{X}^2)	\\
+&amp;	=DX + (EX)^2 - D\bar{X} - (E\bar{X})^2	\\
+&amp;	=\frac{n-1}{n}DX	
+\end{align}
+</code></pre>
+<script type="math/tex; mode=display" id="MathJax-Element-121">
+
+
+E(S2)\=E(1n∑i\=1n(Xi−X¯)2)\=E(1n∑i\=1nXi2)−E(1n∑i\=1n2X¯Xi)+E(1n∑i\=1nX¯2)\=EX2−E(X¯2)\=DX+(EX)2−DX¯−(EX¯)2\=n−1nDX
+
+</script>
+<h3 id="4-多情况下flalign和align环境是如何对齐的">4. 多&amp;情况下flalign和align环境是如何对齐的：</h3>
+<p>根据<code>&amp;</code>（假设n个）一行被分为n+1列。从左向右将列<strong>两个分为一组</strong>，第一组紧靠页左侧，最后一组紧靠页左侧，其余组均匀散布在整个行中。当公式比较短时，中间可能会有几段空白。<br>
+需要注意的是：</p>
+<ol>
+<li>每一<strong>组内部</strong>也是有对齐结构的！它们在所在位置上<strong>向中间对齐</strong>的，即第一列向右对齐，第二列向左对齐。</li>
+<li>所谓紧靠页左/右是在进行了组内对齐调整之后，最长的一块紧靠上去。也就是说对于长度不一两行，较短的那一行是靠不上去的。</li>
+<li>如果总共有奇数个列，及最后一组只有一个列，则它右对齐到页右侧，即所有行的最后一列的右侧都靠在页右侧。</li>
+</ol>
+<p>下面用一个极端的例子来说明这个环境的特点：</p>
+<pre><code>\begin{flalign*}
+xyz &amp;= b+c  &amp;=123          &amp;=123 &amp;=ssss \\
+x   &amp;= 1+12 &amp;=432523452345 &amp;=2   &amp;=a \\
+    &amp;= 2    &amp;=982739       &amp;=p   &amp;=ttt
+\end{flalign*}
+\begin{flalign*}
+xyz &amp;= b+c  &amp;=123          &amp;=123 &amp;=wera  &amp;=ssss \\
+x   &amp;= 1+12 &amp;=432523452345 &amp;=2   &amp;=aeir  &amp;=a \\
+    &amp;= 2    &amp;=982739       &amp;=p   &amp;=panie &amp;=ttt
+\end{flalign*}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://img-blog.csdn.net/20131226172245375" alt="多组&amp;的对齐示例" loading="lazy"></figure>
+<h3 id="5-multline">5. multline</h3>
+<p>注意是multline 不是multiline，虽然它就是那个意思。<br>
+它<strong>不支持</strong>“<code>&amp;</code>”分列。<strong>首行左对齐</strong>，<strong>末行右对齐</strong>，其余各行分别按照全局方式对齐。</p>
+<p>没有常见的应用模式。</p>
+<h3 id="6-alignat">6. alignat</h3>
+<p>它接收一个参数用来指定根据哪一列对齐。</p>
+<pre><code>\begin{alignat}{2}
+ \sigma_1 &amp;= x + y  &amp;\quad \sigma_2 &amp;= \frac{x}{y} \\  
+ \sigma_1' &amp;= \frac{\partial x + y}{\partial x} &amp; \sigma_2'
+    &amp;= \frac{\partial \frac{x}{y}}{\partial x}
+\end{alignat}
+</code></pre>
+<script type="math/tex; mode=display" id="MathJax-Element-176">
+
+
+σ1\=x+yσ2\=xyσ1′\=∂x+y∂xσ2′\=∂xy∂x
+
+</script>
+<h2 id="用于内嵌的对齐环境">用于内嵌的对齐环境</h2>
+<p>这些环境无法独立构成一个数学环境，必须要嵌入在<strong>其他环境内部</strong>。</p>
+<p>Math environment name</p>
+<p>Description</p>
+<p><code>gathered</code></p>
+<p>Allows to gather few equations to be set under each other and assigned a single equation number</p>
+<p><code>split</code></p>
+<p>Similar to <code>align*</code>, but used inside another displayed mathematics environment</p>
+<p><code>aligned</code></p>
+<p>Similar to <code>align</code>, to be used inside another mathematics environment</p>
+<p><code>alignedat</code></p>
+<p>Similar to <code>alignat</code>, and just as it, takes an additional argument specifying number of columns of equations to set</p>
+<p>表格参考自：<a href="http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics">http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics</a><br>
+这些环境都需要amsmath包支持。</p>
+<h3 id="1-aligned">1. aligned</h3>
+<p>例如：</p>
+<pre><code>\begin{equation}
+ \left.\begin{aligned}
+        B'&amp;=-\partial \times E,\\
+        E'&amp;=\partial \times B - 4\pi j,
+       \end{aligned}
+ \right\}
+ \qquad \text{Maxwell's equations}
+\end{equation}
+</code></pre>
+<script type="math/tex; mode=display" id="MathJax-Element-216">
+
+
+B′\=−∂×E,E′\=∂×B−4πj,}Maxwell's equations
+
+</script>
+<p>其中<code>\left</code>和<code>\right</code>后加一个括号的表示用于自动调整各种括号的大小，<strong>必须配对使用</strong>。公式中的<code>\left.</code>是一个虚的<code>\left</code>，目的是为了和<code>\right\}</code>配对。</p>
+<h3 id="2-split">2. split</h3>
+<p>它用于将一个公式拆分成多行，但是它整体还只是一个公式。</p>
+<pre><code>\begin{equation}
+ \begin{split}
+ (a + b)^4
+   &amp;= (a + b)^2 (a + b)^2      \\
+   &amp;= (a^2 + 2ab + b^2)
+      (a^2 + 2ab + b^2)        \\
+   &amp;= a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4
+ \end{split}
+\end{equation}
+
+\begin{equation}
+ \begin{split}
+  (a + b)^3 &amp;= (a + b) (a + b)^2        \\
+            &amp;= (a + b)(a^2 + 2ab + b^2) \\
+            &amp;= a^3 + 3a^2b + 3ab^2 + b^3
+ \end{split}
+\end{equation}
+</code></pre>
+<script type="math/tex; mode=display" id="MathJax-Element-235">
+
+
+(a+b)4\=(a+b)2(a+b)2\=(a2+2ab+b2)(a2+2ab+b2)\=a4+4a3b+6a2b2+4ab3+b4
+
+</script>  
+<script type="math/tex; mode=display" id="MathJax-Element-236">
+
+
+(a+b)3\=(a+b)(a+b)2\=(a+b)(a2+2ab+b2)\=a3+3a2b+3ab2+b3
+
+</script>
+<p>原载于<a href="http://blog.csdn.net/yanxiangtianji">http://blog.csdn.net/yanxiangtianji</a><br>
+转载请注明出处</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://LewisNepenthes.github.io/post/daily-2020-10-05-173410/">
+                  <h3 class="post-title">
+                    Daily 2020-10-05 17:34:10
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
