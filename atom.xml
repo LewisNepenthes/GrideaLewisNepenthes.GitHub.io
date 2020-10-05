@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LewisNepenthes.github.io</id>
     <title>LewisNepenthes&apos;s Blog</title>
-    <updated>2020-10-05T12:24:05.603Z</updated>
+    <updated>2020-10-05T12:42:44.606Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LewisNepenthes.github.io"/>
     <link rel="self" href="https://LewisNepenthes.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://LewisNepenthes.github.io/images/avatar.png</logo>
     <icon>https://LewisNepenthes.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, LewisNepenthes&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[【转载】一份其实很短的 LaTeX 入门文档]]></title>
+        <id>https://LewisNepenthes.github.io/post/zhuan-zai-yi-fen-qi-shi-hen-duan-de-latex-ru-men-wen-dang/</id>
+        <link href="https://LewisNepenthes.github.io/post/zhuan-zai-yi-fen-qi-shi-hen-duan-de-latex-ru-men-wen-dang/">
+        </link>
+        <updated>2020-10-05T12:40:45.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【转载】Github Pages+Gridea搭建个人博客_氷泠-CSDN博客]]></title>
+        <id>https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling-csdn-bo-ke/</id>
+        <link href="https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling-csdn-bo-ke/">
+        </link>
+        <updated>2020-10-05T12:25:07.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【转载】Latex常见公式环境与对齐方式小节（重修版）]]></title>
         <id>https://LewisNepenthes.github.io/post/latex-chang-jian-gong-shi-huan-jing-yu-dui-qi-fang-shi-xiao-jie-chong-xiu-ban/</id>
@@ -65,25 +79,5 @@
         <link href="https://LewisNepenthes.github.io/post/test/">
         </link>
         <updated>2020-09-17T14:07:44.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于]]></title>
-        <id>https://LewisNepenthes.github.io/post/about/</id>
-        <link href="https://LewisNepenthes.github.io/post/about/">
-        </link>
-        <updated>2019-01-25T11:09:48.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://LewisNepenthes.github.io/post/hello-gridea/</id>
-        <link href="https://LewisNepenthes.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></content>
     </entry>
 </feed>
