@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【转载】在 VSCode 下用 Markdown Preview Enhanced 愉快地写文档 | LewisNepenthes&#39;s Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://LewisNepenthes.github.io/favicon.ico?v=1601906224874">
+<link rel="stylesheet" href="https://LewisNepenthes.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="原文链接
+作者：Aya Magician
+
+过年了什么都不想干，歇（shui）一下。写一篇一直想写的安利。
+
+文章内容很杂，所以在开头先整理下。这篇文章的主要内容有：
+
+用 Markdown + Git 写文档真是爽
+MPE 功能很强大，请..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://LewisNepenthes.github.io">
+        <img src="https://LewisNepenthes.github.io/images/avatar.png?v=1601906224874" class="site-logo">
+        <h1 class="site-title">LewisNepenthes&#39;s Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            Archived
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            Tags
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About
+          </a>
+        
+      
+        
+          <a href="https://LewisNepenthes.github.io/post/hello-gridea" class="site-nav">
+            Inbox
+          </a>
+        
+      
+        
+          <a href="https://LewisNepenthes.github.io/post/zhuan-zai-yi-fen-qi-shi-hen-duan-de-latex-ru-men-wen-dang" class="site-nav">
+            External
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/LewisNepenthes" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/u/6369445121/home" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/lewisnepenthes" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      LewisNepenthes's Output
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://LewisNepenthes.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【转载】在 VSCode 下用 Markdown Preview Enhanced 愉快地写文档</h2>
+            <div class="post-date">2020-10-05-Mon 21:50:47</div>
+            
+            <div class="post-content" v-pre>
+              <p><a href="https://zhuanlan.zhihu.com/p/56699805">原文链接</a><br>
+作者：Aya Magician</p>
+<blockquote>
+<p>过年了什么都不想干，歇（shui）一下。写一篇一直想写的安利。</p>
+</blockquote>
+<p>文章内容很杂，所以在开头先整理下。这篇文章的主要内容有：</p>
+<ul>
+<li>用 Markdown + Git 写文档真是爽</li>
+<li>MPE 功能很强大，请吃安利</li>
+<li>用 ditta 画简图轻松愉悦</li>
+<li>在文档里插入代码，随时验证自己的想法</li>
+<li>小型黑科技：制作动态Markdown</li>
+<li>小型黑科技：使用导入文件功能进行非线性写作</li>
+<li>小型黑科技：用 Markdown 写幻灯片</li>
+</ul>
+<p>目标用户是有写文档需求的：策划、有程序基础的策划、有策划基础的程序和美术，等等等等。</p>
+<h2 id="1-为什么要用-markdown-写文档">1. 为什么要用 Markdown 写文档</h2>
+<p>你可能没听说过 Markdown，也可能听说过但没有习惯用它写文档。为了这样的你！我们首先来说 Markdown 是什么，以及使用它的优点。</p>
+<p>Markdown 是一种语言，这种语言的设计思路是：</p>
+<ul>
+<li>它是一种语言而不是二进制文件格式，可以纯文本读和写</li>
+<li>写的时候尽可能可读性高（这里隆重对比另一种能纯文本写出格式的语言 LaTeX，虽然二者目的原理都完全不同）</li>
+<li>在显示的时候被翻译成 HTML 显示，可以很清楚很好看</li>
+</ul>
+<p>我们一点一点分析：</p>
+<p><strong>首先</strong>，Markdown 是一种纯文本格式，因此特别适合于Git进行版本控制。</p>
+<p>想象一个项目有一个图文并茂的描述文档，doc 格式，大小5M。现在我们面临一个抉择——是把它放到 Git 上还是网盘上呢？</p>
+<ul>
+<li>如果放到 Git 上，那么对这个文档的一丁点更改都会引起一个5M大小的二进制文件的改变。非常浪费。</li>
+<li>如果放到网盘上，那么这个文档就会丢失大量的版本信息。重要的改动经常需要手动备份来保留。非常麻烦。</li>
+</ul>
+<p>但是用 Markdown 之后，文档就和代码一样是一行行的纯文本；图片之类的资源是外链的，不改动图片本身就不会产生提交。这就大大提高了版本控制的效率。文档可以像代码一样享受版本控制的优点了。</p>
+<p><strong>其次</strong>，Markdown 在设计时就考虑了可读性，比如下面这段 Markdown 代码：</p>
+<pre><code># Sec 1
+## Sec 1.1
+The *quick* brown fox jumps over the **lazy** dog.
+</code></pre>
+<p>我觉得对于一个没接触过 Markdown 的人来说这段话也不难理解。有一些奇怪的星号，但是不影响我们找到正文。</p>
+<p>如果是 LaTeX 的话，要写成这样：</p>
+<pre><code>\documentclass{article}
+\begin{document}
+\section{Sec 1}
+\subsection{Sec 1.1}
+The \emph{quick} brown fox jumps over the {\bfseries lazy} dog.
+\end{document}
+</code></pre>
+<p>放心吧，不加语法高亮初学者连正文和 LaTeX 命令都分不开。</p>
+<p>Markdown 的语法之所以如此简洁，一方面是因为用一些简单的符号代替了繁杂的格式描述，另一方面是因为 Markdown 本身不关心自己会被如何显示，而是将显示的工作交给了预览工具。（这和 LaTeX 完全相反。）这也是接下来要说的：</p>
+<p><strong>第三</strong>，Markdown 在显示时会被预览工具翻译为 HTML。</p>
+<p>比如<code># XXX</code>会被翻译为<code>&lt;h1&gt;XXX&lt;/h1&gt;</code>。</p>
+<p>这一点非常了不起，因为：</p>
+<ul>
+<li>
+<p>Markdown 是 HTML 的一种简写，在显示时会『解压缩』成 HTML。理论上你可以在 Markdown 里直接插入合法的 HTML 块，他们会成为最终的 HTML 的一部分，做到 Markdown 本身做不到的事。</p>
+</li>
+<li>
+<p>Markdown 的格式可以由 CSS 描述</p>
+</li>
+<li>
+<p>预览工具或者用户可以自己决定用什么 CSS 显示，怎么好看怎么来</p>
+</li>
+<li>
+<p>CSS 这个东西我们都知道，是可以怼天怼地怼空气的……</p>
+</li>
+</ul>
+<blockquote>
+<p>很多学术论文都要求用 LaTeX 来写，因为格式统一优美，不容易出错。缺点是需要漫长的时间适应和学习 LaTeX，而且经常遇到一个模板就要处理一个模板特有的 bug。 有没有这样一种可能，一个 Markdown 预览工具通过合理的翻译和合理的 CSS 搭配，来满足学术论文对于格式的精致要求。 我觉得在今天这是可能的。而且做出来是大功一件。如果你知道有这样的成果的话请告诉我。</p>
+</blockquote>
+<h2 id="2-为什么要用vscode">2. 为什么要用VSCode</h2>
+<p>因为我是微软信者。</p>
+<p>……咳咳，如果你不像我这样有强迫症的话，用 Atom、Sublime 之类的文本编辑器是完全可以的。（在VSCode之前我用Sublime写了很久的 Markdown。）</p>
+<p>或者有很多软件都是专门为编写 Markdown 而开发，可以试一试。——但我不得不说，专门写 Markdown 的软件要么不好，要么收费，要么是在线的。</p>
+<h2 id="3-说起来为什么要本地写markdown">3. 说起来，为什么要本地写Markdown</h2>
+<p>之前我都没思考过这个问题。写到刚才那一段的时候我才突然意识到：对啊，现在一些在线的编辑器对 Markdown 的支持已经非常好了。比如<a href="https://link.zhihu.com/?target=https%3A//note.youdao.com/">有道云笔记</a>或者作业部落的<a href="https://link.zhihu.com/?target=https%3A//www.zybuluo.com/">Cmd Markdown</a>。为什么不用这些在线编辑器呢。</p>
+<p>答案是没什么不可以的。考虑到刚才说的两款在线编辑器甚至有客户端，甚至解决了没有网络时的写作问题。再考虑到这种成熟的在线服务都有着还不错的界面，我觉得特别适合刚上手 Markdown 的同学写文档。</p>
+<p>对我个人而言，选择本地写而不是在线写的原因是：</p>
+<ul>
+<li>目前我看到的功能最强的 Markdown 工具仍然是 MPE</li>
+<li>在线文档编辑是第三方服务，没有放在自己的服务器上踏实——我们都知道第三方服务其实没什么不安全的，但就是不踏实</li>
+<li>有一些私人文档我们一点都不想它在线</li>
+<li>放在本地，或者放在 Git 上，可以让项目文档随着项目进展第一时间更新，在团队合作中避免『我不知道更新了』『我没看到更新』『我网不好刷新不出来』之类的扯皮</li>
+</ul>
+<blockquote>
+<p>题外话，如果你要用这二者之一的话——Cmd Markdown 的功能十分丰富，甚至接近了本文要说的MPE；而有道云笔记虽然功能少，但更接近最初的 Markdown 设计，更简明。</p>
+</blockquote>
+<h2 id="4-特别基本的markdown语法">4. 特别基本的Markdown语法</h2>
+<p>基本的 Markdown 语法非常简单：</p>
+<ul>
+<li>用#开头的行表示这是一个标题，如果是二级标题，就两个#，三级标题就三个#……</li>
+<li>以*开头的行，表示这是一个无序列表；而以数字序号开头的行，表示这是一个有序列表</li>
+<li>以大于号&gt;开头的行被认为是一段引用的文字（你可能在一些论坛，或者邮件客户端里见过这种使用方法）</li>
+<li>没有特殊符号开头的文字就是正文段落。正文段落之间必须有空行。没有空行的换行会被认为仍然是一段话</li>
+<li>在任何时候都可以用一对*将内部的文本标为斜体，用一对**将内部的文本标记为粗体</li>
+<li>前面空四格的段落被认为是代码段，或者可以认为这个段落内容不会被解释成任何格式</li>
+<li>连续敲出你能想到的合适的符号来生成一段分割线，比如***或者---或者___（但是能用---的时候为什么要写___……）</li>
+<li>还可以插入链接、图片等等，直接看例子吧。</li>
+</ul>
+<p>例子在这里：</p>
+<figure data-type="image" tabindex="1"><img src="https://pic1.zhimg.com/v2-141196cbac1f1b61af84bb103e31e528_b.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://pic3.zhimg.com/v2-e26ed9d056760369064f09030612f106_b.jpg" alt="" loading="lazy"></figure>
+<p>这段是最最基础的 Markdown 语法了。但是似乎还不太够，缺了什么呢？</p>
+<p>对了，缺了表格。</p>
+<p>于是又出现了表格的语法。</p>
+<figure data-type="image" tabindex="3"><img src="https://pic4.zhimg.com/v2-43a02b1b4d690025832dd68dea9fc2fb_b.jpg" alt="" loading="lazy"></figure>
+<blockquote>
+<p>注意：表格已经不是Markdown的基础语法了，详见本文最后一部分的说明。 顺带一提，多年以前如果想在Markdown里插入表格要自己写 HTML。</p>
+</blockquote>
+<p>即便不安装任何插件，VSCode 也是支持 Markdown 的语法分析和预览的。你可以建立一个 .md 的文件然后随便写着玩，按 <code>Ctrl+Shift+V</code> 预览结果。</p>
+<blockquote>
+<p>理论上，没有空行的文本块会被解释为同一段话。所以最佳的写法是每写句话回车一次。这样改动任意一句话对整篇文章的影响都是最小的。 但是这样不优雅。优雅很重要。 另外，唉……这里有一个悲伤的故事我们放到文末再说。</p>
+</blockquote>
+<figure data-type="image" tabindex="4"><img src="https://pic3.zhimg.com/v2-8e7cde9c4b275f1c839b63c04f03210a_b.jpg" alt="" loading="lazy"></figure>
+<p>就像这样</p>
+<p>好了，到此为止 Markdown 的功能已经能够应付简单文档的编写了。对于游戏开发（或者说软件开发）来说，以上这些功能足以编写能够让人看懂的文档。</p>
+<p>复杂的内容总是可以通过插入图片来解决——但是不优雅。虽然在 Word 文档里插入 Excel 表格这种邪道做法我一向是不支持的，但也不能什么事都用插入图片解决啊。那我何不用 Photoshop 写文档……</p>
+<p>如何解决这个不优雅的问题呢？终于到了本文的主角登场了。</p>
+<hr>
+<h2 id="5-认识markdown-preview-enhanced">5. 认识Markdown Preview Enhanced</h2>
+<p>MPE 是什么？按照它自己的描述：</p>
+<blockquote>
+<p>Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器编写的<strong>超级强大的</strong> Markdown 插件。 这款插件意在让你拥有飘逸的 Markdown 写作体验。</p>
+</blockquote>
+<p>根据我的使用经验，它没有自吹自擂。<a href="https://link.zhihu.com/?target=https%3A//shd101wyy.github.io/markdown-preview-enhanced/%23/zh-cn/">这里</a>是它的文档，中文的哦。</p>
+<p>MPE 的功能过于丰富因此我不想把他们全列出来，对我而言有用、我想安利的功能主要有：</p>
+<ul>
+<li>目录</li>
+<li>批注</li>
+<li>合并单元格</li>
+<li>插入 LaTeX 公式</li>
+<li>用纯文本绘图</li>
+<li>运行代码</li>
+<li>导入和导出</li>
+<li>制作幻灯片</li>
+</ul>
+<p>下面我们分类介绍。在此之前我们先要知道按 <code>Ctrl+K, V</code> 可以叫出功能强大的 MPE 预览窗口。</p>
+<h2 id="6-对markdown语法的增强">6. 对Markdown语法的增强</h2>
+<p><strong>首先</strong>就是目录，对于长文档来说，目录很有必要。</p>
+<p>在 MPE 里最简单的插入目录的方法就是在单独的行里使用 <code>[TOC]</code> 标记。这会在当前位置立即插入一个目录。</p>
+<p>但是我经常喜欢另一种方式，在要插入目录的地方加这么一行：</p>
+<pre><code>&lt;!-- @import &quot;[TOC]&quot; {cmd=&quot;toc&quot; depthFrom=2 depthTo=3 orderedList=false} --&gt;
+</code></pre>
+<p>第二种方式会直接将生成目录的 Markdown 文本插入到文中，就像这样：</p>
+<figure data-type="image" tabindex="5"><img src="https://pic4.zhimg.com/v2-3fa3d9eb8397c8b0f72801c9af2eab27_b.jpg" alt="" loading="lazy"></figure>
+<p>看，编号还有bug呢</p>
+<p>这样即使在不支持 <code>[TOC]</code> 标记的编辑器里也可以查看目录。不过另一方面，使用 <code>[TOC]</code> 标记更简单，而且现在支持 <code>[TOC]</code> 标记的环境越来越多。而且在 Markdown 里插 HTML 注释比较难看。所以这是个见仁见智的事情。</p>
+<p>注意不管是哪种方法都有办法设定显示在目录里的标题级别。比如可以忽略四级以下的标题，或者忽略一级标题——因为一级标题应该被用来写文档标题。</p>
+<p><strong>其次</strong>是批注。MPE 支持用 <code>==</code> 来高亮一段文字。</p>
+<figure data-type="image" tabindex="6"><img src="https://pic4.zhimg.com/v2-c62b45d5bac4b2fe05af3d97f9f35707_b.png" alt="" loading="lazy"></figure>
+<p>文字高亮可以有效提升阅读体验。尤其是对于中文来说，粗体和斜体都不是很显眼，高亮是很实用的。</p>
+<p>不仅如此，MPE 还支持 <a href="https://link.zhihu.com/?target=http%3A//criticmarkup.com/users-guide.php">CriticMarkup</a> 进行更复杂的批注：</p>
+<figure data-type="image" tabindex="7"><img src="https://pic4.zhimg.com/v2-7fe73e99a1166eef3ff9f8ce7dedff4b_b.jpg" alt="" loading="lazy"></figure>
+<p>你可能觉得有了版本控制就不再需要批注。但我觉得批注有助于我们看清一个东西在不同时间段是什么样子、怎么变成了现在的样子，是很有用的。有一些信息不应该被隐藏在历史提交里，而应该让所有人很清楚地查到。</p>
+<p><strong>第三</strong>是单元格合并。这一点没有想象中有用，但偶尔还是会用到的。</p>
+<figure data-type="image" tabindex="8"><img src="https://pic3.zhimg.com/v2-c340f9ed8ac1fd5cd5da8efd671d6d22_b.jpg" alt="" loading="lazy"></figure>
+<p><strong>最后</strong>关于上下标、Emoji啥的就请大家自己尝试了。</p>
+<figure data-type="image" tabindex="9"><img src="https://pic4.zhimg.com/v2-7e409a3ade301555d1ff547e3c32400f_b.png" alt="" loading="lazy"></figure>
+<h2 id="7-一些让文档变得优雅的工具">7. 一些让文档变得优雅的工具</h2>
+<p>MPE 内嵌了很多工具，可以将策划从尴尬的p图工作中解放出来（投入尴尬的编程工作的怀抱）。</p>
+<p><strong>首先</strong>是用 LaTeX 写数学公式。LaTeX 这个东西我腹诽（不，我是明着骂）的地方非常多，但唯有写数学公式我是很欣赏的。</p>
+<figure data-type="image" tabindex="10"><img src="https://pic4.zhimg.com/v2-54a7c99677f39293d46caa0f5e93c233_b.png" alt="" loading="lazy"></figure>
+<blockquote>
+<p>例子是 MPE 文档给的，我懒得编了。<br>
+咦？但是现在我可以不在 LaTeX 环境下写公式了，是不是可以更加肆无忌惮喷 LaTeX 了？</p>
+</blockquote>
+<p><strong>其次</strong>就是可以用代码描述一些常用的图表，比如流程图、时序图等等，也支持 <a href="https://link.zhihu.com/?target=https%3A//vega.github.io/vega/">Vega</a> 的数学图表（但支持相当有限）。对我来说最有用的反而是大多数人可能不会用到的 <a href="https://link.zhihu.com/?target=https%3A//github.com/stathissideris/ditaa">ditta</a>。</p>
+<figure data-type="image" tabindex="11"><img src="https://pic3.zhimg.com/v2-bf595387c079c8bf345df717874618fe_b.jpg" alt="" loading="lazy"></figure>
+<p>用 ditta 绘制一个简单界面</p>
+<figure data-type="image" tabindex="12"><img src="https://pic1.zhimg.com/v2-9d92f6a7a8fc0cac1898568cb394df18_b.jpg" alt="" loading="lazy"></figure>
+<p>用 ditta 绘制武器斩味（嗯？？？）</p>
+<p>ditta 是一个用字符描述图形的语言，而且是真正的『所见即所得』——你看到的字符怎么摆放，画出来的图形就是什么样的。看上去像是个玩具。但我觉得这个才是和 Markdown 『易写易读』气质最相符的工具。</p>
+<p>ditta 很适合在文档里插一张简单的图画，描述一个简单的画面结构，讲清楚自己的想法。大多数情况下我们的文档里需要的就是这样的简图，而不是特别精美的成品图（因为它们永远活在需求里）。从此，我想画一张图就不需要打开图像编辑器画一张几十k的图片，只需要几十几百个字符、直接写在文档里。然后还有诸如『纯文本、易于版本控制』等等一系列的好处我就不赘述了。</p>
+<p>ditta 是我非常非常喜欢并推崇的工具，强烈推荐给喜欢纯文本写文档的大家。</p>
+<blockquote>
+<p>如果代码没有被执行，没有画出图的话，请 <code>Ctrl+Shift+P</code> 然后执行 Markdown Preview Enhanced: Run Code Chunk。</p>
+</blockquote>
+<h2 id="8-在文档里跑代码">8. 在文档里跑代码</h2>
+<p>被三个单撇号（键盘左上角那个键）包裹的文本块会被认为是代码，这和 Github 的习惯是一致的。（注意！这和 Markdown 原始的规则是不同的。）在单撇号后面加上语言的名字就可以享受到对应语言的语法高亮。</p>
+<figure data-type="image" tabindex="13"><img src="https://pic3.zhimg.com/v2-6cff4e741f74649e41d24b91db9f1742_b.png" alt="" loading="lazy"></figure>
+<p>可以看到和前面那些绘图的语句原理是一样的（请对比一下前面的 ditta）。不同点在于前面的绘图代码可以被执行，而我们自己写的这些代码默认是不能执行的。毕竟随便运行代码是很危险的（尤其是代码块还可以被隐藏，十分危险）。如果要运行自己写的语句的话，需要手动打开设置：</p>
+<figure data-type="image" tabindex="14"><img src="https://pic2.zhimg.com/v2-ee80ee2d6ea3ae8f3b80bb735e4431b1_b.jpg" alt="" loading="lazy"></figure>
+<p>然后，既然可以跑代码了，那……就已经没有什么可怕的了。</p>
+<p>首先，在策划文档里随时跑一跑数值有助于减轻策划的睿智程度。</p>
+<figure data-type="image" tabindex="15"><img src="https://pic1.zhimg.com/v2-0f4c8bd961b27e6ff609cd6d925f7018_b.jpg" alt="" loading="lazy"></figure>
+<p>这个伤害公式本身没有问题，是有用武之地的。但睿智的策划会在所有的地方都用这个公式。</p>
+<p>把代码隐藏可以得到更好的文档效果：</p>
+<figure data-type="image" tabindex="16"><img src="https://pic1.zhimg.com/v2-f37d8d5e1dbe7392a9eded69977d8750_b.jpg" alt="" loading="lazy"></figure>
+<p>只要改代码里的参数，就可以直接在文档中显示结果。是不是很棒？</p>
+<p>更妙的是代码的输出不仅仅可以是文本，还可以是 HTML 甚至 Markdown。</p>
+<p>HTML 输出就是把输出的内容直接插入到 Markdown 生成的 HTML 里，无缝成为文档的一部分：</p>
+<figure data-type="image" tabindex="17"><img src="https://pic1.zhimg.com/v2-de584bb069e834e7244a9af29af6a924_b.jpg" alt="" loading="lazy"></figure>
+<p>Markdown 输出则是将输出的内容当作 Markdown 源代码的一部分。这意味着我们获得了自由度极高的动态 Markdown。</p>
+<figure data-type="image" tabindex="18"><img src="https://pic1.zhimg.com/v2-49c72de98c061d71db8e9be55ecae5c4_b.jpg" alt="" loading="lazy"></figure>
+<p>更更妙的是代码可以分多块书写，然后按照一定的顺序顺次执行。这就使得各种测试调整变得稍微容易了一些。</p>
+<figure data-type="image" tabindex="19"><img src="https://pic3.zhimg.com/v2-feb484c61be8dfda511203b86186de42_b.jpg" alt="" loading="lazy"></figure>
+<h2 id="9-导入和导出">9. 导入和导出</h2>
+<p>MPE 可以简单地把其他文件导入到当前文档中，语法是：</p>
+<p>简单明了，鼓掌！</p>
+<p>这个东西的实用之处在于：</p>
+<ul>
+<li>直接插入图片——不需要之前那么复杂的语法</li>
+<li>插入很长的代码——代码外链是个好习惯</li>
+<li>插入其他 Markdown</li>
+</ul>
+<p>插入图片就不说了。插入代码会让文档变得清爽许多：</p>
+<figure data-type="image" tabindex="20"><img src="https://pic4.zhimg.com/v2-db1a8e33d8c57b5efd8672b4df4fea57_b.jpg" alt="" loading="lazy"></figure>
+<p>test.lua 是个200多行的大文件，全写在文档内难以接受。</p>
+<p>插入 Markdown 很有意思。除了把多个小文档合并成一个大文档这种无脑的用法之外，我觉得最有潜力的用法是——非线性写作啊！</p>
+<figure data-type="image" tabindex="21"><img src="https://pic2.zhimg.com/v2-0d3db9d0f405952802b9ab9d107eb541_b.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="22"><img src="https://pic4.zhimg.com/v2-37c841c0e9914444440ec3b527b33fa3_b.jpg" alt="" loading="lazy"></figure>
+<p>如果我们把一些小文件当作卡片的话，善用导入文件功能就可以实现类似 Scrivener 的功能了。虽然用户体验上相差甚远，但是免费啊。</p>
+<p>导出文件比导入文件还好理解：</p>
+<ul>
+<li>首先在预览窗口里右键，选择 Open in Browser</li>
+<li>在浏览器里打印为 PDF……</li>
+<li>……完成</li>
+</ul>
+<p>你可能会说：我的老板需要我给他一个 doc 格式的文档。嗯，如果你不是正在申请著作权的话，你的老板非要用 doc 而不是 pdf 文档基本上只有一种可能——他想背着你修改你的文档。你应该辱骂他。</p>
+<p>如果你不想辱骂他的话，MPE 也是可以导出 doc 文档的，这个请查阅 MPE 的文档吧，因为我没尝试过所以就不举例子了。</p>
+<h2 id="10-幻灯片">10. 幻灯片</h2>
+<p>到上面为止，对我个人而言已经足以应付日常的文档工作了。</p>
+<p>但是还有一种情况，就是要把自己的想法展示给别人。虽然我是觉得打开 A4 大小的 pdf 直接给人讲也不错，不过如果搞个幻灯片不是更让人开心嘛。</p>
+<p>非常好笑的是 MPE 还支持用 Markdown （当然是增强版的）写幻灯片。</p>
+<blockquote>
+<p>我觉得比起『真厉害』，这个功能更倾向于好笑啊哈哈哈哈哈哈哈哈哈</p>
+</blockquote>
+<p>可以先看看<a href="https://link.zhihu.com/?target=https%3A//rawgit.com/shd101wyy/markdown-preview-enhanced/master/docs/presentation-intro.html">这个例子</a>感受一下制作出来的幻灯片之强大：</p>
+<ul>
+<li>MPE 支持的绝大部分功能都能用于幻灯片</li>
+<li>横向/纵向切换幻灯片</li>
+<li>演讲者视图和注释（厉害厉害）</li>
+<li>全局预览</li>
+<li>动画</li>
+<li>非常自由和比较方便的主题设置</li>
+</ul>
+<p>这个幻灯片的源代码在<a href="https://link.zhihu.com/?target=https%3A//raw.githubusercontent.com/shd101wyy/markdown-preview-enhanced/master/docs/presentation-intro.md">这里</a>，可以感受一下，还是很有趣的。</p>
+<figure data-type="image" tabindex="23"><img src="https://pic3.zhimg.com/v2-9cdb8bcec592d54e24af913b4610975e_b.jpg" alt="" loading="lazy"></figure>
+<p>功能全面，不得不服</p>
+<p>以前上学的时候，我的一个老师曾经说过：幻灯片不需要那些花里胡哨的效果、那么多颜色、那么多动画，重要的是将内容表达清楚。单色背景+清晰的文字，远比图片+动画表达的效率要高。我当时听了如醍醐灌顶。</p>
+<p>后来过了几年我发现——这就是你们赚钱不如隔壁美院轻松的原因啊！</p>
+<p>……不说这个了，对于不是给外人看的幻灯片，用 MPE 写还是有很多优点的：</p>
+<ul>
+<li>拿自己写好的文档稍微改改分页就能生成幻灯片</li>
+<li>专注于内容，而不是表现</li>
+<li>非要表现的话也完全达到了一般人用 PowerPoint 能做出来的水平。</li>
+</ul>
+<p>但是客观的说，这个幻灯片做出来也就是给自己人用的。如果要做给外人看的幻灯片，还是拜托有审美的同事帮忙好好做一个吧。</p>
+<hr>
+<h2 id="x-总结一下">X 总结一下</h2>
+<p>这篇文章是想给有写文档需求的人安利一些好的工具。我觉得软件，尤其是游戏的策划都应该有一些程序基础，在有一些程序基础的前提下 Markdown 是非常方便的文档工具，MPE 更可以让文档工作变得更有乐趣。</p>
+<p>回顾下这篇文章的主要内容：</p>
+<ul>
+<li>用 Markdown + Git 写文档真是爽</li>
+<li>MPE 功能很强大，请吃安利</li>
+<li>用 ditta 画简图轻松愉悦</li>
+<li>在文档里插入代码，随时验证自己的想法</li>
+<li>小型黑科技：制作动态Markdown</li>
+<li>小型黑科技：使用导入文件功能进行非线性写作</li>
+<li>小型黑科技：用 Markdown 写幻灯片</li>
+</ul>
+<p>这样 Office 三件套里有两个可以纯文本解决了。Excel...目前真不行……</p>
+<h2 id="xx-一些题外话">XX 一些题外话</h2>
+<p>我刚开始接触 Markdown 的时候，语法异常简明。没有目录、没有 TODO 支持、甚至没有表格。</p>
+<p>可以看看<a href="https://link.zhihu.com/?target=http%3A//www.markdown.cn/">Markdown-语法说明</a>来回顾下 Markdown 的香草时代。</p>
+<p>讲道理那个时候的 Markdown 不是特别实用。（HTML 的表格手写太复杂了，所以不如不用表格。）那个时候的 Markdown 更适合写简短的说明或者笔记。</p>
+<p>后来逐渐有了表格、有了 TODO 支持，我觉得特别好。再后来一些工具支持 <code>[TOC]</code>，我觉得很方便。有了这些东西，完全可以写出比较完整成熟的文档了。</p>
+<p>再后来有了各种绘图的插件，解放了画图的生产力。我对这件事怀着喜忧参半的心情。一方面这些功能真的很方便，我也经常用。另一方面，在 Markdown 里大规模插入代码严重破坏了 Markdown 本身的风格。一个虽然全是文本但根本看不出渲染结果的 Markdown 一点也不让人开心。</p>
+<p>大概也是这个时间前后，不同环境对 Markdown 语法的支持也出现了区别。我们现在甚至不能说最初的 Markdown 语法是大家支持的最小子集。举例来说，在 MPE 里段落间不空行也不会连成一段，没有空行的两行会翻译成软回车，有空行的翻译成硬回车。我之前举的两个在线平台支持的语法也不尽相同。我觉得这种风气很不好。如果最后每个平台对 Markdown 的支持都不尽相同，形成了各自的壁垒，那 Markdown 就被毁了。</p>
+<p>我是信奉『没有限制就没有创造力』这一派的。所以我推荐下面这个 VSCode 插件：<a href="https://link.zhihu.com/?target=https%3A//marketplace.visualstudio.com/items%3FitemName%3DDavidAnson.vscode-markdownlint">markdownlint</a>，一个看名字就让我笑出来的好东西。</p>
+<p>目前这个插件规定了45条书写 Markdown 的规范。大多数非常有道理，少部分非常有道理但不方便。不过我们可以在设置里手动关闭一些特定规则的语法检查，或者设置特定规则的细节。</p>
+<figure data-type="image" tabindex="24"><img src="https://pic1.zhimg.com/v2-ba78038ee72c49d14a38ff5e5a304ea0_b.png" alt="" loading="lazy"></figure>
+<p>是的，规则025说：一级标题只能有一个，就是文档标题。而文档正文中的一级标题应该用二级 Markdown 标题。</p>
+<p>装了这个插件之后你的 Markdown 文件就会和你的代码文件一样到处充斥着绿色波浪线了。如果你看本文到这里能够 get 到我的笑点的话，你可能就会猜到我看到 Markdown 里面也有绿色波浪线经常会笑出来。</p>
+<blockquote>
+<p>结果这个文章也不水嘛，还是写了三天。</p>
+</blockquote>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://LewisNepenthes.github.io/post/zhuan-zai-yi-fen-qi-shi-hen-duan-de-latex-ru-men-wen-dang/">
+                  <h3 class="post-title">
+                    【转载】一份其实很短的 LaTeX 入门文档
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
