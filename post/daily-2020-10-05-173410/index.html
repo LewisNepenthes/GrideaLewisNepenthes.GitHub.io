@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | LewisNepenthes&#39;s Blog</title>
+<title>Daily 2020-10-05 17:34:10 | LewisNepenthes&#39;s Blog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,23 @@
 <link rel="stylesheet" href="https://LewisNepenthes.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="LewisNepenthes&#39;s Output">
+    <meta name="description" content="就其实写日记可以非常的简介和明了，不用那么多有的没的，把这些发布上来，然后就会在这个时间线上留下一些你自己的回忆，我想，这是我一直梦寐以求的吧。
+我不知道别人怎么像，我倒是觉得我自己这么干让我觉得非常地舒适。
+所以就这样吧。
+2020-10..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -112,12 +122,40 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">Daily 2020-10-05 17:34:10</h2>
+            <div class="post-date">2020-10-05-Mon 17:34:03</div>
             
-              <a class="tag" href="https://LewisNepenthes.github.io/tag/fH1od5rvj/">Gridea</a>
+            <div class="post-content" v-pre>
+              <p>就其实写日记可以非常的简介和明了，不用那么多有的没的，把这些发布上来，然后就会在这个时间线上留下一些你自己的回忆，我想，这是我一直梦寐以求的吧。</p>
+<p>我不知道别人怎么像，我倒是觉得我自己这么干让我觉得非常地舒适。</p>
+<p>所以就这样吧。</p>
+<p>2020-10-05 17:35:17</p>
+<p>test.</p>
+
+            </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://LewisNepenthes.github.io/post/test-for-iframe/">
+                  <h3 class="post-title">
+                    Test for iframe
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
+
         </div>
       </div>
     </div>
@@ -142,6 +180,29 @@ var app = new Vue({
     hljs.initHighlightingOnLoad()
   </script>
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
