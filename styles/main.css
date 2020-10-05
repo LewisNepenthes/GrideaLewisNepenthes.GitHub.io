@@ -760,6 +760,10 @@ a {
 }
 
       body {
+        background: #343a40;
+      }
+    
+      body {
     font-family: "Times New Roman","KaiTi", Helvetica, Arial, sans-serif;
     font-size: 17.5px;
 }
