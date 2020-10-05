@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【转载】Github Pages+Gridea搭建个人博客_氷泠 | LewisNepenthes&#39;s Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://LewisNepenthes.github.io/favicon.ico?v=1601889559742">
+<link rel="stylesheet" href="https://LewisNepenthes.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="1 概述
+Github Pages可以用来托管个人网站，静态的，便于用来实现博客，可以在一个仓库的settings中开启：
+
+Gridea是一个静态博客写作客户端，所有文件都在本地，没有数据库，实现简单，支持Markdown。
+
+好了不多说..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://LewisNepenthes.github.io">
+        <img src="https://LewisNepenthes.github.io/images/avatar.png?v=1601889559742" class="site-logo">
+        <h1 class="site-title">LewisNepenthes&#39;s Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            Archived
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            Tags
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            About
+          </a>
+        
+      
+        
+          <a href="https://LewisNepenthes.github.io/post/hello-gridea" class="site-nav">
+            Inbox
+          </a>
+        
+      
+        
+          <a href="www.google.com" class="site-nav" target="_blank">
+            External
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/LewisNepenthes" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/u/6369445121/home" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      LewisNepenthes's Output
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://LewisNepenthes.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【转载】Github Pages+Gridea搭建个人博客_氷泠</h2>
+            <div class="post-date">2020-10-05-Mon 17:05:50</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="1-概述">1 概述</h1>
+<p>Github Pages可以用来托管个人网站，静态的，便于用来实现博客，可以在一个仓库的settings中开启：</p>
+<p><img src="https://img-blog.csdnimg.cn/2020031520214830.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/2020031520214830.png" alt="" loading="lazy"></p>
+<p>Gridea是一个静态博客写作客户端，所有文件都在本地，没有数据库，实现简单，支持Markdown。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315202345239.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315202345239.png" alt="" loading="lazy"></p>
+<p>好了不多说开始动手。</p>
+<h1 id="2-准备工作">2 准备工作</h1>
+<ul>
+<li>
+<p>一个Gthub账号</p>
+</li>
+<li>
+<p>一个Github Pages的仓库</p>
+</li>
+<li>
+<p>一个Gridea客户端（支持Mac，Windows，Linux）</p>
+</li>
+<li>
+<p>（可选）一个域名</p>
+</li>
+</ul>
+<h1 id="3-github-pages">3 Github Pages</h1>
+<p><img src="https://img-blog.csdnimg.cn/20200315203349869.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315203349869.png" alt="" loading="lazy"></p>
+<p>仓库名是:</p>
+<p>用户名.github.io<br>
+需要公开仓库与一个REDAME文件,然后创建.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315203610218.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315203610218.png" alt="" loading="lazy"></p>
+<p>进入设置开启Github Pages:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315203501765.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315203501765.png" alt="" loading="lazy"></p>
+<p>下拉找到Github Pages:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315203715972.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315203715972.png" alt="" loading="lazy"></p>
+<p>默认使用master分支,可以选择主题.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315203800731.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315203800731.png" alt="" loading="lazy"></p>
+<p>然后在浏览器输入刚才创建的仓库名就可以访问了.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315203855310.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315203855310.png" alt="" loading="lazy"></p>
+<h1 id="4-gridea">4 Gridea</h1>
+<p>理论上来说这样就完成了,但是如果想更好看和更方便管理一些,就要用Gridea.</p>
+<p>先去下载,<a href="https://gridea.dev/">官网这里</a>.</p>
+<p>下载之后直接打开,进入设置:</p>
+<p><img src="https://img-blog.csdnimg.cn/2020031520443512.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/2020031520443512.png" alt="" loading="lazy"></p>
+<p>域名与仓库名一样,分支填master,email自己填,这里说一下Token.打开设置中的开发者设置:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315204535121.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315204535121.png" alt="" loading="lazy"></p>
+<p>新建一个Token:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315204615866.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315204615866.png" alt="" loading="lazy"></p>
+<p>只需要勾选仓库相关的权限,名字可以随便.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315204643285.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315204643285.png" alt="" loading="lazy"></p>
+<p>复制填入.</p>
+<p><img src="https://img-blog.csdnimg.cn/2020031520472566.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/2020031520472566.png" alt="" loading="lazy"></p>
+<p>然后可以测试一下连接:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315205359751.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315205359751.png" alt="" loading="lazy"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200315205343447.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315205343447.png" alt="" loading="lazy"></p>
+<p>若失败请返回前几步看看哪里出错.</p>
+<p>设置好了之后可以设置主题等,自定义美化.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315205847245.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315205847245.png" alt="" loading="lazy"></p>
+<p>设置好了之后可以先预览再同步.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315210305371.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315210305371.png" alt="" loading="lazy"></p>
+<p>同步完成后就可以在浏览器输入 用户名.github.io `进行访问了.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200315234157577.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200315234157577.png" alt="" loading="lazy"></p>
+<h1 id="5-绑定域名可选">5 绑定域名(可选)</h1>
+<p>如果购买了域名的话,可以绑定到自己的域名上面,笔者的域名是阿里云上购买的,因此这里以阿里云的为例,进入域名的解析页面,添加两个记录:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200316000331100.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200316000331100.png" alt="" loading="lazy"></p>
+<p>第一个记录类型是CNAME,主机记录是www,记录值为仓库的名字.</p>
+<p>第二个记录类型是A,主机记录是@,记录值为ping仓库名字得到的ip.</p>
+<p>若成功的话会这样显示:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200316000551553.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200316000551553.png" alt="" loading="lazy"></p>
+<p>添加之后在Gridea的客户端中设置的CNAME添加域名:</p>
+<p><img src="https://img-blog.csdnimg.cn/20200316000202462.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200316000202462.png" alt="" loading="lazy"></p>
+<p>使用左下角的按钮测试一下,测试通过之后就可以通过域名访问了.</p>
+<p>如果想通过https访问,直接在Github Pages中设置Enforce HTTPS即可(解析域名之后需要一定时间才可以勾选).</p>
+<p><img src="https://img-blog.csdnimg.cn/20200316143452174.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200316143452174.png" alt="" loading="lazy"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200316143701802.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200316143701802.png" alt="" loading="lazy"></p>
+<p>之后就可以通过https访问了.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200316145611495.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/20200316145611495.png" alt="" loading="lazy"></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://LewisNepenthes.github.io/post/chuang-jian-yi-pian-xin-de-wen-zhang/">
+                  <h3 class="post-title">
+                    创建一篇新的文章
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

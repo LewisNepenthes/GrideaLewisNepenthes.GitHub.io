@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LewisNepenthes.github.io</id>
     <title>LewisNepenthes&apos;s Blog</title>
-    <updated>2020-10-05T09:01:52.538Z</updated>
+    <updated>2020-10-05T09:19:23.726Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LewisNepenthes.github.io"/>
     <link rel="self" href="https://LewisNepenthes.github.io/atom.xml"/>
@@ -11,14 +11,18 @@
     <icon>https://LewisNepenthes.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, LewisNepenthes&apos;s Blog</rights>
     <entry>
+        <title type="html"><![CDATA[【转载】Github Pages+Gridea搭建个人博客_氷泠]]></title>
+        <id>https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling/</id>
+        <link href="https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling/">
+        </link>
+        <updated>2020-10-05T09:05:50.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[创建一篇新的文章]]></title>
         <id>https://LewisNepenthes.github.io/post/chuang-jian-yi-pian-xin-de-wen-zhang/</id>
         <link href="https://LewisNepenthes.github.io/post/chuang-jian-yi-pian-xin-de-wen-zhang/">
         </link>
         <updated>2020-10-05T07:49:12.000Z</updated>
-        <content type="html"><![CDATA[<p>主要看一下master和main的区别，我现在选的Branch是main，按理来说数据应该是同步到main上的，也就是master上的数据，不变。那么待会我就去Gihub上看看数据有没有得到改变。<br>
-2020-10-05 15:51:02</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Shortcuts for Android]]></title>
@@ -26,27 +30,6 @@
         <link href="https://LewisNepenthes.github.io/post/shortcuts-for-android/">
         </link>
         <updated>2020-10-05T06:57:12.000Z</updated>
-        <content type="html"><![CDATA[<p>Android<br>
-Esc = 后退</p>
-<p>Print Screen = 截屏（废话）</p>
-<p>Ctrl + Esc = 弹出菜单</p>
-<p>Ctrl + P = 设置</p>
-<p>Ctrl + W = 设置壁纸</p>
-<p>Ctrl + H = Nexus 帮助</p>
-<p>Ctrl + M = 打开系统菜单中的应用程序项</p>
-<p>Ctrl + Alt + Del = 直接重启。。。没任何提示（慎用！！）</p>
-<p>Alt + space = 打开Google now</p>
-<p>Alt + Tab（Win + Tab） = 和Windows一样，快速切换任务</p>
-<p>Win + A = 计数器</p>
-<p>Win + B = 浏览器</p>
-<p>Win + C = 通讯录</p>
-<p>Win + E = 邮件</p>
-<p>Win + G = Gmail</p>
-<p>Win + L = Google 日历</p>
-<p>Win + P = Google 音乐</p>
-<p>Win + T = Hangout，在手机上也许是短信</p>
-<p>Win+Q = 长拉菜单栏</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Lewis使用Quicker遇到的问题，向Boninall求助]]></title>
@@ -54,22 +37,6 @@ Esc = 后退</p>
         <link href="https://LewisNepenthes.github.io/post/lewis-shi-yong-quicker-yu-dao-de-wen-ti-xiang-boninall-qiu-zhu/">
         </link>
         <updated>2020-10-05T06:48:36.000Z</updated>
-        <content type="html"><![CDATA[<p>Bon，你好，我是ob群里的Lewis，在使用你的quicker插件的时候遇到一些问题，因为在ob群没找到你，就跑来思源群找你咨询了。<br>
-主要问题有2个，第1个是关于摘录助手--限制版的：在pdf editor里ctrl+6自动复制文件路径失败，导致出现“剪切板文本为空的情况”：</p>
-<figure data-type="image" tabindex="1"><img src="http://lewisnepenthes.xuexihaike.com/1.png" alt="1" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="http://lewisnepenthes.xuexihaike.com/2.png" alt="2" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="http://lewisnepenthes.xuexihaike.com/3.png" alt="3" loading="lazy"></figure>
-<p>上面图2中，第一行是不常见的正常复制出来的路径，第二行是常见的copy file的情况，如果复制的是第一行的路径，那么摘录助手是正常运行的，而如果是copy file的情况，那么动作会出现“剪切板文本为空的情况”。至于什么时候能正常复制，什么时候不能，我在ob群提出这个问题的时候，@船长他说是执行的次数不够，所以让我调高次数，但我发现依然会出现那种情况。<br>
-<img src="http://lewisnepenthes.xuexihaike.com/4.png" alt="4" loading="lazy"><br>
-所以我便手动去ctrl+6复制文件路径，并且用Ditto查看什么时候正常复制文件路径，什么时候会copy file。然后得到的次数有4次、6次、16次、19次这种不规律的数字，例如按下4次ctrl+6，前3次会copy file，第4次会复制路径。</p>
-<p>第2个问题与ob地址--配合版相关。在摘录助手正常复制文档路径后，可以在ob里面粘贴所选文本和相应的路径，最后会弹出新建网址url的窗口，接着我在ob里面使用ob地址配合版这一动作，也可以顺利运行，将ctrl+8的地址转换成obsidian://vault/MyBrain/这种路径，但是在pdf窗口里输入这个地址后，在pdf点击网页跳转，会出现下面这个提示，也就是没办法从pdf跳转到ob。<br>
-<img src="http://lewisnepenthes.xuexihaike.com/5.png" alt="5" loading="lazy"><br>
-以上是我使用这2个动作遇到的问题，因为希望能够得到解答，万分感谢！</p>
-<p>图片版</p>
-<figure data-type="image" tabindex="4"><img src="http://lewisnepenthes.xuexihaike.com/ob%E9%81%87%E5%88%B0%E7%9A%84Q.png" alt="ob遇到的Q" loading="lazy"></figure>
-<figure data-type="image" tabindex="5"><img src="http://lewisnepenthes.xuexihaike.com/%E5%88%A9%E7%94%A8cmd%E6%89%93%E5%BC%80obsidian%E5%BA%93%E6%96%87%E4%BB%B6.jpg" alt="利用cmd打开obsidian库文件" loading="lazy"></figure>
-<figure data-type="image" tabindex="6"><img src="%E8%88%B9%E9%95%BF%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E6%91%98%E5%BD%95%E5%8A%A9%E6%89%8B.mp4" alt="船长正常使用摘录助手" loading="lazy"></figure>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Test Success for Mobile]]></title>
@@ -77,11 +44,6 @@ Esc = 后退</p>
         <link href="https://LewisNepenthes.github.io/post/test/">
         </link>
         <updated>2020-09-17T14:07:44.000Z</updated>
-        <content type="html"><![CDATA[<p>This is a Test Text for Gridea.<br>
-2020-9-17 22:08:13</p>
-<p>测试成功了兄弟，现在的问题就是，在电脑端是看不到，但是在手机端上可以看到，所以如果电脑端要看的话，就只能通过本地预览来看了，应该是防火墙那边的一个问题。Anyway，总算是可以建立一个属于自己的文字王国了。<br>
-2020-10-05 14:52:41</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[关于]]></title>
@@ -89,26 +51,6 @@ Esc = 后退</p>
         <link href="https://LewisNepenthes.github.io/post/about/">
         </link>
         <updated>2019-01-25T11:09:48.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<ul>
-<li><a href="LewisNepenthes.github.io">本站链接</a></li>
-</ul>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<ul>
-<li>LewisNepenthes</li>
-</ul>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<ul>
-<li>Output.</li>
-</ul>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<ul>
-<li>lewisnepenthes@163.com</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
@@ -121,25 +63,6 @@ Esc = 后退</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
 ]]></content>
     </entry>
 </feed>
