@@ -758,9 +758,22 @@ a {
   font-size: 16px;
   margin: 4px 8px;
 }
+.post-item .left .post-abstract a {
+  color: #e9bed2;
+  border-bottom: 1px dotted #160318;
+  transition: all 0.3s;
+}
 
       body {
-        background: #343a40;
+        color: #fa5252;
+      }
+    
+      .sidebar .top-container .site-nav {
+        color: #e9ecef;
+      }
+    
+      body {
+        background: #adb5bd;
       }
     
       body {
