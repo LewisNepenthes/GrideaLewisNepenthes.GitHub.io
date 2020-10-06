@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://LewisNepenthes.github.io</id>
+    <id>https://GrideaLewisNepenthes.GitHub.io</id>
     <title>LewisNepenthes&apos;s Blog</title>
-    <updated>2020-10-06T11:49:48.620Z</updated>
+    <updated>2020-10-06T15:52:43.147Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://LewisNepenthes.github.io"/>
-    <link rel="self" href="https://LewisNepenthes.github.io/atom.xml"/>
+    <link rel="alternate" href="https://GrideaLewisNepenthes.GitHub.io"/>
+    <link rel="self" href="https://GrideaLewisNepenthes.GitHub.io/atom.xml"/>
     <subtitle>LewisNepenthes&apos;s Output</subtitle>
-    <logo>https://LewisNepenthes.github.io/images/avatar.png</logo>
-    <icon>https://LewisNepenthes.github.io/favicon.ico</icon>
+    <logo>https://GrideaLewisNepenthes.GitHub.io/images/avatar.png</logo>
+    <icon>https://GrideaLewisNepenthes.GitHub.io/favicon.ico</icon>
     <rights>All rights reserved 2020, LewisNepenthes&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[Test for iframe of youku]]></title>
-        <id>https://LewisNepenthes.github.io/post/test-for-iframe-of-youku/</id>
-        <link href="https://LewisNepenthes.github.io/post/test-for-iframe-of-youku/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/test-for-iframe-of-youku/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/test-for-iframe-of-youku/">
         </link>
         <updated>2020-10-06T11:47:17.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[测试一下字体的颜色]]></title>
-        <id>https://LewisNepenthes.github.io/post/ce-shi-yi-xia-zi-ti-de-yan-se/</id>
-        <link href="https://LewisNepenthes.github.io/post/ce-shi-yi-xia-zi-ti-de-yan-se/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/ce-shi-yi-xia-zi-ti-de-yan-se/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/ce-shi-yi-xia-zi-ti-de-yan-se/">
         </link>
         <updated>2020-10-06T06:12:13.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【转载】在 VSCode 下用 Markdown Preview Enhanced 愉快地写文档]]></title>
-        <id>https://LewisNepenthes.github.io/post/zhuan-zai-zai-vscode-xia-yong-markdown-preview-enhanced-yu-kuai-di-xie-wen-dang/</id>
-        <link href="https://LewisNepenthes.github.io/post/zhuan-zai-zai-vscode-xia-yong-markdown-preview-enhanced-yu-kuai-di-xie-wen-dang/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-zai-vscode-xia-yong-markdown-preview-enhanced-yu-kuai-di-xie-wen-dang/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-zai-vscode-xia-yong-markdown-preview-enhanced-yu-kuai-di-xie-wen-dang/">
         </link>
         <updated>2020-10-05T13:50:47.000Z</updated>
         <summary type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/56699805">原文链接</a><br>
@@ -39,50 +39,50 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[【转载】一份其实很短的 LaTeX 入门文档]]></title>
-        <id>https://LewisNepenthes.github.io/post/zhuan-zai-yi-fen-qi-shi-hen-duan-de-latex-ru-men-wen-dang/</id>
-        <link href="https://LewisNepenthes.github.io/post/zhuan-zai-yi-fen-qi-shi-hen-duan-de-latex-ru-men-wen-dang/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-yi-fen-qi-shi-hen-duan-de-latex-ru-men-wen-dang/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-yi-fen-qi-shi-hen-duan-de-latex-ru-men-wen-dang/">
         </link>
         <updated>2020-10-05T12:40:45.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【转载】Github Pages+Gridea搭建个人博客_氷泠-CSDN博客]]></title>
-        <id>https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling-csdn-bo-ke/</id>
-        <link href="https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling-csdn-bo-ke/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling-csdn-bo-ke/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling-csdn-bo-ke/">
         </link>
         <updated>2020-10-05T12:25:07.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【转载】Latex常见公式环境与对齐方式小节（重修版）]]></title>
-        <id>https://LewisNepenthes.github.io/post/latex-chang-jian-gong-shi-huan-jing-yu-dui-qi-fang-shi-xiao-jie-chong-xiu-ban/</id>
-        <link href="https://LewisNepenthes.github.io/post/latex-chang-jian-gong-shi-huan-jing-yu-dui-qi-fang-shi-xiao-jie-chong-xiu-ban/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/latex-chang-jian-gong-shi-huan-jing-yu-dui-qi-fang-shi-xiao-jie-chong-xiu-ban/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/latex-chang-jian-gong-shi-huan-jing-yu-dui-qi-fang-shi-xiao-jie-chong-xiu-ban/">
         </link>
         <updated>2020-10-05T12:22:59.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Daily 2020-10-05 17:34:10]]></title>
-        <id>https://LewisNepenthes.github.io/post/daily-2020-10-05-173410/</id>
-        <link href="https://LewisNepenthes.github.io/post/daily-2020-10-05-173410/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/daily-2020-10-05-173410/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/daily-2020-10-05-173410/">
         </link>
         <updated>2020-10-05T09:34:03.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Test for iframe]]></title>
-        <id>https://LewisNepenthes.github.io/post/test-for-iframe/</id>
-        <link href="https://LewisNepenthes.github.io/post/test-for-iframe/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/test-for-iframe/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/test-for-iframe/">
         </link>
         <updated>2020-10-05T09:26:12.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【转载】Github Pages+Gridea搭建个人博客_氷泠]]></title>
-        <id>https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling/</id>
-        <link href="https://LewisNepenthes.github.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling/">
         </link>
         <updated>2020-10-05T09:05:50.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Shortcuts for Android]]></title>
-        <id>https://LewisNepenthes.github.io/post/shortcuts-for-android/</id>
-        <link href="https://LewisNepenthes.github.io/post/shortcuts-for-android/">
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/shortcuts-for-android/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/shortcuts-for-android/">
         </link>
         <updated>2020-10-05T06:57:12.000Z</updated>
     </entry>
