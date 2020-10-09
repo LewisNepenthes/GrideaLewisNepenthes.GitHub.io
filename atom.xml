@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://GrideaLewisNepenthes.GitHub.io</id>
     <title>LewisNepenthes&apos;s Blog</title>
-    <updated>2020-10-07T15:06:34.476Z</updated>
+    <updated>2020-10-09T13:27:14.119Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://GrideaLewisNepenthes.GitHub.io"/>
     <link rel="self" href="https://GrideaLewisNepenthes.GitHub.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://GrideaLewisNepenthes.GitHub.io/images/avatar.png</logo>
     <icon>https://GrideaLewisNepenthes.GitHub.io/favicon.ico</icon>
     <rights>All rights reserved 2020, LewisNepenthes&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Gridea新建文章倒是挺方便的]]></title>
+        <id>https://GrideaLewisNepenthes.GitHub.io/post/gridea-xin-jian-wen-zhang-dao-shi-ting-fang-bian-de/</id>
+        <link href="https://GrideaLewisNepenthes.GitHub.io/post/gridea-xin-jian-wen-zhang-dao-shi-ting-fang-bian-de/">
+        </link>
+        <updated>2020-10-09T13:25:54.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Test for iframe of youku]]></title>
         <id>https://GrideaLewisNepenthes.GitHub.io/post/test-for-iframe-of-youku/</id>
@@ -78,12 +85,5 @@
         <link href="https://GrideaLewisNepenthes.GitHub.io/post/zhuan-zai-github-pagesgridea-da-jian-ge-ren-bo-ke-_-bing-ling/">
         </link>
         <updated>2020-10-05T09:05:50.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Shortcuts for Android]]></title>
-        <id>https://GrideaLewisNepenthes.GitHub.io/post/shortcuts-for-android/</id>
-        <link href="https://GrideaLewisNepenthes.GitHub.io/post/shortcuts-for-android/">
-        </link>
-        <updated>2020-10-05T06:57:12.000Z</updated>
     </entry>
 </feed>
